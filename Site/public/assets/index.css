@@ -1,0 +1,182 @@
+.headline {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.addbutton {
+  text-decoration: none;
+  background-color: #268724;
+  color: #efefef;
+  border-radius: 6px;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.addbutton > span {
+  font-size: 1.25rem;
+}
+
+.customerBtn {
+  background-color: #1c3b8b;
+  width: fit-content;
+  padding: 4px 10px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 1.15rem;
+  margin: auto;
+}
+
+.actionsfield {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.actionsfield a:nth-child(1) {
+  color: #e5d43b;
+}
+
+.actionsfield a:nth-child(2) {
+  color: #ff8787;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 0;
+  width: 100%;
+  background-color: #0e101e;
+  min-width: 320px;
+}
+
+thead th {
+  background-color: #262833;
+  color: #39e3d9;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+thead th:first-child {
+  color: #e99312;
+  font-size: 1.5rem;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #343645;
+}
+
+tbody td {
+  font-size: 1.15rem;
+  padding: 1.25rem;
+  text-align: center;
+}
+
+tbody td:first-child {
+  color: #e99312;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+tbody tr:hover {
+  transform: scale(1.01);
+  background-color: #3f4579;
+}
+
+tbody tr {
+  transition: transform 0.3s;
+}
+
+a {
+  color: #efefef;
+  text-decoration: none;
+}
+
+.mainBackBtn {
+  min-width: 70px;
+  max-width: 110px;
+  min-height: 35px;
+  background-color: #ac2d2d;
+  border: 0;
+  border-radius: 6px;
+  color: #efefef;
+  font-size: 1rem;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 740px) {
+  .addbutton > span {
+    display: none;
+  }
+
+  table thead tr {
+    display: none;
+  }
+
+  tr {
+    display: block;
+  }
+
+  table th,
+  table td {
+    padding: 0.65rem;
+  }
+
+  table td {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    font-size: 1rem;
+  }
+
+  .customerBtn {
+    margin: 0;
+  }
+
+  table td:not(:first-child)::before {
+    content: attr(data-title) ": ";
+    float: left;
+    font-weight: bold;
+    color: #39e3d9;
+    font-size: 1.25rem;
+  }
+
+  table td:first-child::before {
+    content: attr(data-title);
+    color: #e99312;
+    float: left;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+
+  td:first-child {
+    background-color: #343645;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: transparent;
+  }
+
+  .mainBackBtn {
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 8px;
+    position: fixed;
+    bottom: 20px;
+    left: 12px;
+  }
+}

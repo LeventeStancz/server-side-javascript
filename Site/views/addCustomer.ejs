@@ -1,0 +1,53 @@
+<%- include('formheader') %>
+<div class="main">
+  <div class="container">
+    <h1 class="title">Add customer (testdata)</h1>
+    <form
+      action="/hairdressers/<%= hairdresser._id %>/customers/add"
+      method="POST"
+    >
+      <div>
+        <label>Full name:</label>
+        <input type="text" name="name" minlength="4" maxlength="256" required />
+      </div>
+      <div>
+        <label>Contact: (Email)</label>
+        <input type="email" name="contact" minlength="4" required />
+      </div>
+      <div>
+        <label>Last visit:</label>
+        <input
+          type="date"
+          name="last_visit"
+          min="<%= new Date().toISOString().substring(0, 10) %>"
+          value="<%= new Date().toISOString().substring(0, 10) %>"
+          required
+        />
+      </div>
+      <div>
+        <label>Avarage time:</label>
+        <select name="avg_time">
+          <option value="15 minute">15 minute</option>
+          <option value="30 minute" selected>30 minute</option>
+          <option value="45 minute">45 minute</option>
+          <option value="1 hour">1 hour</option>
+          <option value="1 hour 15 minute">1 hour 15 minute</option>
+          <option value="1 hour 30 minute">1 hour 30 minute</option>
+          <option value="1 hour 45 minute">1 hour 45 minute</option>
+          <option value="2 hour">2 hour</option>
+          <option value="2 hour 15 minute">2 hour 15 minute</option>
+          <option value="2 hour 30 minute">2 hour 30 minute</option>
+          <option value="2 hour 45 minute">2 hour 45 minute</option>
+          <option value="3 hour">3 hour</option>
+        </select>
+      </div>
+      <div class="formBtn">
+        <button class="saveBtn" type="submit">Save</button>
+        <a href="/hairdressers/<%= hairdresser._id %>/customers" class="backBtn"
+          >Back</a
+        >
+      </div>
+    </form>
+  </div>
+</div>
+<%- include('footer') %>

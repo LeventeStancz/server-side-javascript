@@ -1,0 +1,43 @@
+<%- include('formheader') %>
+<div class="main">
+  <div class="container">
+    <h1 class="title">Add hairdresser</h1>
+    <form action="/hairdressers/add" method="POST">
+      <div>
+        <label>Full name:</label>
+        <input type="text" name="name" minlength="4" maxlength="256" required />
+      </div>
+      <div>
+        <label>Contact: (Email)</label>
+        <input type="email" name="contact" minlength="4" required />
+      </div>
+      <div>
+        <label>Pricing: (min-max)</label>
+        <div class="numbers">
+          <input
+            type="number"
+            name="pricing_min"
+            min="5"
+            max="10000"
+            value="10"
+            required
+          />
+          <span>---</span>
+          <input
+            type="number"
+            name="pricing_max"
+            min="5"
+            max="10000"
+            value="50"
+            required
+          />
+        </div>
+      </div>
+      <div class="formBtn">
+        <button class="saveBtn" type="submit">Save</button>
+        <a href="/hairdressers" class="backBtn">Back</a>
+      </div>
+    </form>
+  </div>
+</div>
+<%- include('footer') %>

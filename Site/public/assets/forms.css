@@ -1,0 +1,119 @@
+.container {
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+form div label {
+  margin: 14px 0px;
+  font-size: 1.5rem;
+}
+
+form div input {
+  font-size: 1rem;
+  width: 100%;
+  height: fit-content;
+  max-height: 55px;
+  background-color: #333645;
+  border: 0;
+  border-radius: 6px;
+  padding: 10px;
+  color: #efefef;
+}
+
+form div input:focus {
+  outline: 2px solid #e99312;
+}
+
+form div select {
+  font-size: 1rem;
+  width: 100%;
+  height: fit-content;
+  max-height: 55px;
+  background-color: #333645;
+  border: 0;
+  border-radius: 6px;
+  padding: 12px;
+  color: #efefef;
+}
+
+form div select > option {
+  font-size: 1rem;
+}
+
+.numbers {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+}
+
+.numbers input {
+  font-size: 1rem;
+  max-width: 100px;
+  background-color: #333645;
+  border: 0;
+  border-radius: 6px;
+  padding: 8px;
+  color: #efefef;
+}
+
+.formBtn {
+  margin-top: 30px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+.saveBtn {
+  width: 70px;
+  height: 40px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #efefef;
+  background-color: #268724;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.backBtn {
+  width: 70px;
+  height: 40px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #efefef;
+  background-color: #ac2d2d;
+  border: 0;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+@media (max-width: 740px) {
+  form div label {
+    margin-top: 14px;
+    margin-bottom: 10px;
+    font-size: 1.15rem;
+  }
+
+  form div select > option {
+    font-size: 0.95rem;
+  }
+}

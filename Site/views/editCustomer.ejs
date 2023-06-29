@@ -1,0 +1,64 @@
+<%- include('formheader') %>
+<div class="main">
+  <div class="container">
+    <h1 class="title">Edit customers data</h1>
+    <form
+      action="/hairdressers/<%= hairdresser._id %>/customers/edit/<%= customer._id %>"
+      method="POST"
+    >
+      <div>
+        <label>Full name:</label>
+        <input
+          name="name"
+          type="text"
+          minlength="4"
+          maxlength="256"
+          value="<%= customer.name %>"
+        />
+      </div>
+      <div>
+        <label>Contact: (Email)</label>
+        <input
+          name="contact"
+          type="email"
+          minlength="4"
+          value="<%= customer.contact %>"
+        />
+      </div>
+      <div>
+        <label>Last visit:</label>
+        <input
+          name="last_visit"
+          type="date"
+          min="<%= new Date().toISOString().substring(0, 10) %>"
+          value="<%=
+        customer.last_visit.toISOString().substring(0, 10) %>"
+        />
+      </div>
+      <div>
+        <label>Avarage time:</label>
+        <select name="avg_time">
+          <option value="15 minute">15 minute</option>
+          <option value="30 minute" selected>30 minute</option>
+          <option value="45 minute">45 minute</option>
+          <option value="1 hour">1 hour</option>
+          <option value="1 hour 15 minute">1 hour 15 minute</option>
+          <option value="1 hour 30 minute">1 hour 30 minute</option>
+          <option value="1 hour 45 minute">1 hour 45 minute</option>
+          <option value="2 hour">2 hour</option>
+          <option value="2 hour 15 minute">2 hour 15 minute</option>
+          <option value="2 hour 30 minute">2 hour 30 minute</option>
+          <option value="2 hour 45 minute">2 hour 45 minute</option>
+          <option value="3 hour">3 hour</option>
+        </select>
+      </div>
+      <div class="formBtn">
+        <button class="saveBtn" type="submit">Save</button>
+        <a href="/hairdressers/<%= hairdresser._id %>/customers" class="backBtn"
+          >Back</a
+        >
+      </div>
+    </form>
+  </div>
+</div>
+<%- include('footer') %>

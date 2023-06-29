@@ -1,0 +1,32 @@
+<%- include('formheader') %>
+<div class="main">
+  <div class="container">
+    <h1 class="title">Delete customer</h1>
+    <h1>Are you sure you want to delete the following customer?</h1>
+    <form
+      action="/hairdressers/<%= hairdresser._id %>/customers/delete/<%= customer._id %>"
+      method="POST"
+    >
+      <div>
+        <label>Full name:</label>
+        <input name="name" type="text" readonly value="<%= customer.name %>" />
+      </div>
+      <div>
+        <label>Contact: (Email)</label>
+        <input
+          name="contact"
+          type="email"
+          readonly
+          value="<%= customer.contact %>"
+        />
+      </div>
+      <div class="formBtn">
+        <button class="saveBtn" type="submit">Delete</button>
+        <a href="/hairdressers/<%= hairdresser._id %>/customers" class="backBtn"
+          >Back</a
+        >
+      </div>
+    </form>
+  </div>
+</div>
+<%- include('footer') %>

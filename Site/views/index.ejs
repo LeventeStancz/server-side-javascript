@@ -1,0 +1,14 @@
+<%- include('indexheader') %>
+<div class="main">
+  <div class="container">
+    <section class="headline">
+      <h1 class="title">Hairdressers</h1>
+      <a href="/hairdressers/add" class="addbutton">
+        <i data-feather="plus-circle"></i>
+        <span>Add hairdresser</span>
+      </a>
+    </section>
+    <section><%- include('hairDressersTable') %></section>
+  </div>
+</div>
+<%- include('footer') %>

@@ -1,0 +1,47 @@
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Contact</th>
+      <th>Pricing</th>
+      <th>Customers</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if(typeof hairdressers !== 'undefined' && hairdressers.length > 0) { for
+    (let i = 0; i < hairdressers.length; ++i) { %>
+    <tr>
+      <td data-title="#"><%= i+1 %></td>
+      <td data-title="Name"><%= hairdressers[i].name %></td>
+      <td data-title="Contact"><%= hairdressers[i].contact %></td>
+      <td data-title="Pricing">
+        $<%= hairdressers[i].pricing_min %> - <%= hairdressers[i].pricing_max %>
+      </td>
+      <td data-title="Customers">
+        <a
+          href="/hairdressers/<%= hairdressers[i]._id %>/customers"
+          class="customerBtn"
+        >
+          Customers<i data-feather="external-link"></i>
+        </a>
+      </td>
+      <td data-title="Actions">
+        <div class="actionsfield">
+          <a href="/hairdressers/edit/<%= hairdressers[i]._id %>"
+            ><i data-feather="edit"></i
+          ></a>
+          <a href="/hairdressers/delete/<%= hairdressers[i]._id %>"
+            ><i data-feather="trash-2"></i
+          ></a>
+        </div>
+      </td>
+    </tr>
+    <% } } else { %>
+    <tr>
+      <td colspan="6">There are no hairdressers at this time</td>
+    </tr>
+    <% } %>
+  </tbody>
+</table>

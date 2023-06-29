@@ -1,0 +1,42 @@
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Contact</th>
+      <th>Last visit</th>
+      <th>Avg. time</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if(typeof customers !== 'undefined' && customers.length > 0) { for (let i
+    = 0; i < customers.length; ++i) { %>
+    <tr>
+      <td data-title="#"><%= i+1 %></td>
+      <td data-title="Name"><%= customers[i].name %></td>
+      <td data-title="Contact"><%= customers[i].contact %></td>
+      <td data-title="Last visit">
+        <%= new Date(customers[i].last_visit).toISOString().substring(0, 10) %>
+      </td>
+      <td data-title="Avg. time"><%= customers[i].avg_time %></td>
+      <td data-title="Actions">
+        <div class="actionsfield">
+          <a
+            href="/hairdressers/<%= hairdresser._id %>/customers/edit/<%= customers[i]._id %>"
+            ><i data-feather="edit"></i
+          ></a>
+          <a
+            href="/hairdressers/<%= hairdresser._id %>/customers/delete/<%= customers[i]._id %>"
+            ><i data-feather="trash-2"></i
+          ></a>
+        </div>
+      </td>
+    </tr>
+    <% } } else { %>
+    <tr>
+      <td colspan="6">This hairdresser doesn't have any customer</td>
+    </tr>
+    <% } %>
+  </tbody>
+</table>
